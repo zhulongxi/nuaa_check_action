@@ -3,8 +3,8 @@ name: 'Check'
 on:
   push:
   schedule:
-  # 0+8=8
-  - cron: '20 0 * * *' 
+  # 3+8=11
+  - cron: '20 3 * * *' 
 
 jobs:
   bot:
