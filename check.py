@@ -33,8 +33,7 @@ def login(stu_number, password):
             response = requests.get('https://m.nuaa.edu.cn/a_nuaa/api/login-v2/index', cookies=cookies,
                              data='username={}&password={}&imei={}&mobile_type={}&sid={}'.format(stu_number,
                                                                                                  password, "158916bc3d341bf9",
-                                                                                                 "Android", "158916bc3d341bf9"))
-            print('login...:', r.status_code)                                                                                
+                                                                                                 "Android", "158916bc3d341bf9"))                                                                               
             print('login...:', response.status_code)
 
             # cookies2 = response.headers['Set-Cookie']
