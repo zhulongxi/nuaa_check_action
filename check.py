@@ -29,8 +29,10 @@ def login(stu_number, password):
             cookies = dict(response.cookies)
 
             time.sleep(delay)
-            response = requests.get('https://m.nuaa.edu.cn/uc/wap/login/check', cookies=cookies,
-                                    data='username={}&password={}'.format(stu_number, password))
+            response = requests.get('https://m.nuaa.edu.cn/a_nuaa/api/login-v2/index', cookies=cookies,
+                             data='username={}&password={}&imei={}&mobile_type={}&sid={}'.format(login_id,
+                                                                                                 login_password, 158916bc3d341bf9,
+                                                                                                 android, 158916bc3d341bf9))
             print('login...:', response.status_code)
 
             # cookies2 = response.headers['Set-Cookie']
@@ -109,7 +111,7 @@ def get_uid_id(cookies):
         try:
             time.sleep(delay)
             response = requests.get(
-                'https://m.nuaa.edu.cn/ncov/wap/default', cookies=cookies)
+                'https://m.nuaa.edu.cn/ncov/wap/default/index?t=20210430', cookies=cookies)
             response.encoding = 'utf-8'
             uid = re.search(r'"uid":"([0-9]*)"', response.text).group(1)
             id = re.search(r'"id":([0-9]*)', response.text).group(1)
