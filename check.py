@@ -9,6 +9,7 @@ import requests
 from send_mail import send_mail
 # from requests_toolbelt.utils import dump
 
+
 try_times = 1   # 失败这么多次后就直接不管了
 delay = 2   # 访问页面前的延迟，为了防止过快访问网站被封IP
 
